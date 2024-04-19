@@ -16,43 +16,28 @@
                 ItemsSource="{Binding Autok}"
                 SelectionMode="None"
                 x:Name="searchResults">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="model:Auto">
-                        <Frame 
-                        VerticalOptions="Center"
-                        Style="{StaticResource CardView}"
-                        WidthRequest="300"
-                        HeightRequest="150"
-                        Padding="120"
-                        BackgroundColor="LightGoldenrodYellow">
-                            <VerticalStackLayout>
-                                <Label Text="Autó adatai: "
-                                   FontSize="Medium"
-                                   FontAutoScalingEnabled="True"
-                                   TextColor="Blue"/>
-                                <Label Text="{Binding Rendszam,StringFormat='Rendszam: {0}'}"
-                                    FontSize="Small"
-                                    FontAutoScalingEnabled="True"
-                                    TextColor="DarkSlateBlue"/>
-                                <Label Text="{Binding Marka,StringFormat='Márka: {0}'}"
-                                    FontSize="Small"
-                                    FontAutoScalingEnabled="True"
-                                    TextColor="DarkSlateBlue"/>
-                                <Label Text="{Binding Kor,StringFormat='Kor: {0}'}"
-                                    FontSize="Small"
-                                    FontAutoScalingEnabled="True"
-                                    TextColor="DarkSlateBlue"/>
-                            </VerticalStackLayout>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-            <ActivityIndicator IsVisible="{Binding IsBusy}"
-                           IsRunning="{Binding IsBusy}"
-                           HorizontalOptions="FillAndExpand"
-                           VerticalOptions="CenterAndExpand"
-                           Grid.RowSpan="2"
-                           Grid.ColumnSpan="2"
-       />
-        </Grid>
+            <CollectionView.Header>
+                <Grid ColumnDefinitions="*,*,*,*">
+                    <Label Text="Rendszám" Grid.Column="0"/>
+                    <Label Text="Márka" Grid.Column="1"/>
+                    <Label Text="Kor" Grid.Column="2"/>
+                </Grid>
+            </CollectionView.Header>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Auto">
+                    <Grid ColumnDefinitions="*,*,*">
+                        <Label Text="{Binding Rendszam}" Grid.Column="0"/>
+                        <Label Text="{Binding Marka}" Grid.Column="1"/>
+                        <Label Text="{Binding Kor}" Grid.Column="2"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
+                        IsRunning="{Binding IsBusy}"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        Grid.RowSpan="2"
+                        Grid.ColumnSpan="2"/>
+    </Grid>
 </ContentView>
