@@ -7,54 +7,7 @@
              x:Class="NaviOkt.View.ListaPage"
              Loaded="ContentPage_Loaded"
              Title="{Binding Title}">
-    <Grid ColumnDefinitions="*,*"
-      ColumnSpacing="5"
-      RowDefinitions="Auto,*"
-      RowSpacing="0">
-        <CollectionView BackgroundColor="LightCyan"
-                Grid.ColumnSpan="2"
-                Grid.Row="0"
-                ItemsSource="{Binding Autok}"
-                SelectionMode="None"
-                x:Name="searchResults">
-            <CollectionView.ItemTemplate>
-                <DataTemplate x:DataType="model:Auto">
-                    <Frame 
-                        VerticalOptions="Center"
-                        Style="{StaticResource CardView}"
-                        WidthRequest="300"
-                        HeightRequest="130"
-                        Margin="5"
-                        Padding="15"
-                        BackgroundColor="LightGoldenrodYellow">
-                        <VerticalStackLayout>
-                            <Label Text="Autó adatai: "
-                                   FontSize="Medium"
-                                   FontAutoScalingEnabled="True"
-                                   TextColor="Blue"/>
-                            <Label Text="{Binding Rendszam,StringFormat='Rendszam: {0}'}"
-                                    FontSize="Small"
-                                    FontAutoScalingEnabled="True"
-                                    TextColor="DarkSlateBlue"/>
-                            <Label Text="{Binding Marka,StringFormat='Márka: {0}'}"
-                                    FontSize="Small"
-                                    FontAutoScalingEnabled="True"
-                                    TextColor="DarkSlateBlue"/>
-                            <Label Text="{Binding Kor,StringFormat='Kor: {0}'}"
-                                    FontSize="Small"
-                                    FontAutoScalingEnabled="True"
-                                    TextColor="DarkSlateBlue"/>
-                        </VerticalStackLayout>
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
-        <ActivityIndicator IsVisible="{Binding IsBusy}"
-                           IsRunning="{Binding IsBusy}"
-                           HorizontalOptions="FillAndExpand"
-                           VerticalOptions="CenterAndExpand"
-                           Grid.RowSpan="2"
-                           Grid.ColumnSpan="2"
-       />
-    </Grid>
+
+    <VerticalStackLayout x:Name="VerticalLayout" />
+   
 </ContentPage>

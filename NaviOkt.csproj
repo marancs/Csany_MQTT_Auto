@@ -57,6 +57,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="Backend\node_modules\**" />
+	  <Compile Remove="Backend\node_modules\**" />
+	  <EmbeddedResource Remove="Backend\node_modules\**" />
+	  <MauiCss Remove="Backend\node_modules\**" />
+	  <MauiXaml Remove="Backend\node_modules\**" />
+	  <None Remove="Backend\node_modules\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Backend\.env" />
+	  <None Remove="Backend\package-lock.json" />
+	  <None Remove="Backend\package.json" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
@@ -75,6 +90,12 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="View\MainPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\ViewAndroid.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="View\ViewWindows.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
