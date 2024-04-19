@@ -25,7 +25,7 @@ mqtt_Client.on("connect", () => {
 
 mqtt_Client.subscribe("Auto/Keres",{ qos: 0 })
 
-function GetAllTarsas(){
+function GetAllAuto(){
     SendToJsonAsync("SELECT * FROM Auto").then(
         adatok=>{
                 console.log("Adatok továbbitása");
@@ -34,14 +34,12 @@ function GetAllTarsas(){
     )
 }
 
-
-
 // receive a message from the subscribed topic
 mqtt_Client.on('message',(topic, message) => {
     //console.log(`message: ${message}, topic: ${topic}`); 
     if (topic=="Auto/Keres" && message == "all"){
-        console.log("Összes társas lekérdezése..")
-        GetAllTarsas();
+        console.log("Összes auto lekérdezése..")
+        GetAllAuto();
     }
 });
 
@@ -59,7 +57,5 @@ const SendToJsonAsync =function (sql) {
         });
    })
 }
-
-
 
 app.listen(port, function () { console.log(`Example app listening at http://localhost:${port}`); });
