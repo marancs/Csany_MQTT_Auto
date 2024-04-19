@@ -10,11 +10,12 @@
           ColumnSpacing="5"
           RowDefinitions="Auto,*"
           RowSpacing="0">
-        
         <Label Grid.Row="0"
                Grid.ColumnSpan="2"
-               FontSize="Large"
+               Padding="20"
                FontAutoScalingEnabled="True"
-               Text="{Binding Welcome}"/>
+               Text="{Binding Welcome}"
+               VerticalTextAlignment="Center"
+               HorizontalTextAlignment="Center"/>
     </Grid>
 </ContentPage>

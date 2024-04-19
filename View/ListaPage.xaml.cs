@@ -1,5 +1,4 @@
 namespace NaviOkt.View;
-
 public partial class ListaPage : ContentPage
 {
 	ListaViewModel viewModel;

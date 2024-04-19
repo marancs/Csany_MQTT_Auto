@@ -11,7 +11,7 @@
       ColumnSpacing="5"
       RowDefinitions="Auto,*"
       RowSpacing="0">
-        <CollectionView BackgroundColor="Blue"
+        <CollectionView BackgroundColor="LightCyan"
                 Grid.ColumnSpan="2"
                 Grid.Row="0"
                 ItemsSource="{Binding Autok}"
@@ -20,28 +20,41 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="model:Auto">
                     <Frame 
-                VerticalOptions="Center"
-                Style="{StaticResource CardView}"
-                WidthRequest="300"
-                HeightRequest="100"
-                Margin="10"
-                Padding="20">
+                        VerticalOptions="Center"
+                        Style="{StaticResource CardView}"
+                        WidthRequest="300"
+                        HeightRequest="130"
+                        Margin="5"
+                        Padding="15"
+                        BackgroundColor="LightGoldenrodYellow">
                         <VerticalStackLayout>
-                            <Label Text="Auto adatai: "></Label>
+                            <Label Text="Autó adatai: "
+                                   FontSize="Medium"
+                                   FontAutoScalingEnabled="True"
+                                   TextColor="Blue"/>
                             <Label Text="{Binding Rendszam,StringFormat='Rendszam: {0}'}"
-                           Margin="0,0,0,0"
-                           TextColor="Black"/>
+                                    FontSize="Small"
+                                    FontAutoScalingEnabled="True"
+                                    TextColor="DarkSlateBlue"/>
+                            <Label Text="{Binding Marka,StringFormat='Márka: {0}'}"
+                                    FontSize="Small"
+                                    FontAutoScalingEnabled="True"
+                                    TextColor="DarkSlateBlue"/>
+                            <Label Text="{Binding Kor,StringFormat='Kor: {0}'}"
+                                    FontSize="Small"
+                                    FontAutoScalingEnabled="True"
+                                    TextColor="DarkSlateBlue"/>
                         </VerticalStackLayout>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <!--<ActivityIndicator IsVisible="{Binding IsBusy}"
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
                            IsRunning="{Binding IsBusy}"
                            HorizontalOptions="FillAndExpand"
                            VerticalOptions="CenterAndExpand"
                            Grid.RowSpan="2"
                            Grid.ColumnSpan="2"
-       />-->
+       />
     </Grid>
 </ContentPage>

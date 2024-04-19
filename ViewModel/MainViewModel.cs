@@ -11,7 +11,7 @@ public partial class MainViewModel : ObservableObject
     string welcome;
     public MainViewModel(AutoService service) {
         AutoSz = service;
-        Title = "MAui teszt program";
+        Title = "Maui teszt program";
         Welcome = "MAUI - MQTT - NODJS - MYSQL";
     }
 }
