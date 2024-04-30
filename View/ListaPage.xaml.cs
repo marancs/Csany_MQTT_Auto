@@ -9,18 +9,12 @@ public partial class ListaPage : ContentPage
         BindingContext = vm;
         if (DeviceInfo.Platform == DevicePlatform.Android)
         {
-            VerticalLayout.Add(new ViewAndroid(vm));
+            VerticalLayout.Add(new ViewAndroid(new AListaViewModel(new AutoService())));
         }
 
         if (DeviceInfo.Platform == DevicePlatform.WinUI)
         {
-            VerticalLayout.Add(new ViewWindows(vm));
+            VerticalLayout.Add(new ViewWindows(new AListaViewModel(new AutoService())));
         }
-
-    }
-
-    private void ContentPage_Loaded(object sender, EventArgs e)
-    {
-        viewModel.GetAutokCommand.Execute(null);
     }
 }

@@ -2,8 +2,8 @@ namespace NaviOkt.View;
 
 public partial class ViewAndroid : ContentView
 {
-    ListaViewModel viewModel;
-    public ViewAndroid(ListaViewModel vm)
+    AListaViewModel viewModel;
+    public ViewAndroid(AListaViewModel vm)
     {
         InitializeComponent();
         viewModel = vm;

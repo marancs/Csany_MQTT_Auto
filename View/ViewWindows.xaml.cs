@@ -2,8 +2,8 @@ namespace NaviOkt.View;
 
 public partial class ViewWindows : ContentView
 {
-    ListaViewModel viewModel;
-    public ViewWindows(ListaViewModel vm)
+    AListaViewModel viewModel;
+    public ViewWindows(AListaViewModel vm)
 	{
 		InitializeComponent();
         viewModel = vm;

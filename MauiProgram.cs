@@ -21,8 +21,13 @@ namespace NaviOkt
             builder.Services.AddSingleton<AutoService>();
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<ListaPage>();
+            builder.Services.AddSingleton<ViewAndroid>();
+            builder.Services.AddSingleton<DetailPage>();
+
             builder.Services.AddSingleton<MainViewModel>();
             builder.Services.AddSingleton<ListaViewModel>();
+            builder.Services.AddSingleton<AListaViewModel>();
+            builder.Services.AddSingleton<DetailViewModel>();
             return builder.Build();
         }
     }

@@ -18,5 +18,6 @@
                 <Setter Property="IsClippedToBounds" Value="True"/>
             </Style>
         </ResourceDictionary>
+        
     </Application.Resources>
 </Application>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:NaviOkt.Model"
+             xmlns:viewmodel="clr-namespace:NaviOkt.ViewModel"
+             x:DataType="viewmodel:DetailViewModel"
+             x:Class="NaviOkt.View.DetailPage"
+             Title="{Binding Kocsi.Rendszam}">
+    <VerticalStackLayout>
+        <Label 
+            Text="Kocsi adatai"
+            Style="{StaticResource Headline}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="0,50,0,20"
+            />
+        <Line X1="0"
+              Y1="0"
+              X2="1000"
+              Y2="0"
+              Stroke="Red"
+              />
+        <Label 
+            Text="{Binding Kocsi.Marka, StringFormat='Kocsi Márkája: {0}'}"
+            FontSize="Large"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Padding="10"/>
+        <Label 
+            Text="{Binding Kocsi.Tipus, StringFormat='Kocsi Tipusa: {0}'}"
+            FontSize="Large"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Padding="10"/>
+        <Label 
+            Text="{Binding Kocsi.Kor, StringFormat='Kocsi kora: {0} év'}"
+            FontSize="Large"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Padding="10"/>
+    </VerticalStackLayout>
+</ContentPage>
