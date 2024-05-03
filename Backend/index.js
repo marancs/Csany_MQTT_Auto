@@ -62,13 +62,5 @@ const SendToJsonAsync =function (sql) {
         });
    })
 }
-function Send_to_JSON (req, res, sql) {
-    DB.query(sql, naplo(req), (json_data, error) => {
-      let data = error ? error : JSON.parse( json_data ); 
-      res.set('Content-Type', 'application/json; charset=UTF-8');
-      res.send(data);
-      res.end();
-    });
-  }
 
 app.listen(port, function () { console.log(`Example app listening at http://localhost:${port}`); });
