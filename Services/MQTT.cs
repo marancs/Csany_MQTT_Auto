@@ -34,8 +34,8 @@ namespace NaviOkt.Services
             Random ran = new Random();
             mqttClient = mqttFactory.CreateMqttClient();
             var mqttClientOptions = new MqttClientOptionsBuilder()
-                    .WithTcpServer("almaspite.duckdns.org", 1883)
-                    .WithCredentials("marancs", "Mt28335379") // Set username and password
+                    .WithTcpServer("localhost", 1883)
+                    .WithCredentials("", "") // Set username and password
                     .WithClientId("mqtt_" + ran.Next(1000, 10000).ToString())
                     .WithCleanSession()
                     .Build();
