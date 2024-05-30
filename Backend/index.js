@@ -1,17 +1,13 @@
 const util = require('util');
-const express = require('express');
-const session = require('express-session');
 const app    = express();
 const port   = 3000;
 const mqtt = require('mqtt')
 var DB      = require('./data.js');
-
 var mqtt_Client = `mqtt_${Math.random().toString(16).slice(3)}`;
 var mqtt_Url = `mqtt://${process.env.MQTT_HOST}:${process.env.MQTT_PORT}`
 var mqtt_Username = process.env.mqtt_usr; // mqtt credentials if these are needed to connect
 var mqtt_Password = process.env.mqtt_pass;
 
-app.use(express.static('public'));    // frontend root mappa (index.html)?
 
 //MQTT
 mqtt_Client = mqtt.connect(mqtt_Url, {
