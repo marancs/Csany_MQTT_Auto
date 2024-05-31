@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace NaviOkt.Model
 {
-    public class Auto : INotifyPropertyChanged
+    public class Auto : ObservableObject
     {
 
         private string? _rendszam;
@@ -42,24 +42,5 @@ namespace NaviOkt.Model
         {
 
         }
-
-        bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string? propertyName = null)
-        {
-            if (Object.Equals(storage, value))
-                return false;
-
-            storage = value;
-            OnPropertyChanged(propertyName);
-            return true;
-        }
-
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
     }
 }
